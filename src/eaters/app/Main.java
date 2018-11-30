@@ -31,6 +31,16 @@ public class Main {
 
         milk.setTags("#milk");
         milk.setTags("#moloko");
+        milk.setTags("#molokomoloko");
+
+
+        System.out.println(milk.getTags());
+
+        milk.deleteTag("#milk");
+
+        System.out.println(milk.getTags());
+
+        milk.deleteAllTags();
 
         System.out.println(milk.getTags());
 

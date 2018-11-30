@@ -20,6 +20,14 @@ public class Ingredient {
         this.manufactureData = new Date();
     }
 
+    public void deleteTag(String tag) {
+        tags.remove(tag);
+    }
+
+    public void deleteAllTags() {
+        tags.clear();
+    }
+
     public void setName(String name) { this.name = name; }
 
     public void setGroup(Group group) { this.group = group; }
