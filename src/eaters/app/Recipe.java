@@ -1,13 +1,15 @@
 package eaters.app;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Recipe {
     String name;
     String description;
     int rating = 0;
-    List<Ingredient> ingredients;
-    List<Tag> tags;
+    List<Ingredient> ingredients = new ArrayList<>();
+    List<Tag> tags = new ArrayList<>();
 
     public Recipe(String name, String descriprion) {
         this.name = name;
@@ -40,9 +42,9 @@ public class Recipe {
             System.out.println("There is no ingredients!");
         } else {
             for (Ingredient x : this.ingredients)
-                System.out.println("#" + x.name + " ");
+                System.out.print(x.name + " ");
         }
-        System.out.println("\n\n");
+        System.out.println("\n");
     }
 
     public void setRating(int rating) {
@@ -55,6 +57,7 @@ public class Recipe {
     }
 
     public void showRating() {
+        System.out.print("Rating: ");
         if (this.rating == 0) {
             System.out.println("Unrated");
         } else {
@@ -67,7 +70,7 @@ public class Recipe {
 
     public void addTag(Tag tag) {
         this.tags.add(tag);
-        System.out.print("The tag: " + tag.name + " has been added");
+        System.out.println("The tag: " + tag.name + " has been added");
     }
 
     public void removeTag(Tag tag) {
@@ -82,11 +85,12 @@ public class Recipe {
 
 
     public void showTags() {
+        System.out.print("Tags: ");
         if (this.tags.isEmpty()) {
             System.out.println("There is no tags");
         } else {
             for (Tag x : this.tags)
-                System.out.println("#" + x.name + " ");
+                System.out.print("#" + x.name + " ");
         }
     }
 
@@ -98,7 +102,7 @@ public class Recipe {
     public void showRecipe() {
         System.out.println(this.name + "\n");
         System.out.println(this.description + "\n");
-        System.out.print("Чтобы приготовить:" + this.name + " необходимо ");
+        System.out.print("Чтобы приготовить: " + this.name + " необходимо: ");
         showIngredients();
         showRating();
         showTags();
