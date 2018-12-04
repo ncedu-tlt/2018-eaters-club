@@ -193,7 +193,7 @@ public class Main {
         inputString = scanner.nextLine();
         newIngredient.setValue(parseInt(inputString));
 
-        System.out.print(" Введите размерность ингредиента (Dimention):");
+        System.out.println(" Введите размерность ингредиента (Dimention):");
         for (Dimention tmp : Dimention.values()) {
             System.out.println(tmp);
         }
