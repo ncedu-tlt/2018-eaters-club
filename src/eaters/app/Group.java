@@ -8,6 +8,7 @@ public enum Group {
     Chicken,
     Eggs,
     Milk,
-    Beans
-
+    Beans,
+    Bakery,
+    Fat
 }
