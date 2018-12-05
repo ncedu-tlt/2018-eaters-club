@@ -86,7 +86,10 @@ public class Ingredient {
 
     public Group getGroup() { return group; }
 
-    public Date getShelfLifeDate() { return shelfLifeDate; }
+    public Date getShelfLifeDate() {
+        Date copyShelfLifeDate = shelfLifeDate;
+        return copyShelfLifeDate;
+    }
 
     public int getValue() { return value; }
 

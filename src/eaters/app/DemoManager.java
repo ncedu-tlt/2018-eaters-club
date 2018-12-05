@@ -80,6 +80,7 @@ public class DemoManager {
         ingredients.add(bread);
         ingredients.add(agg);
         ingredients.add(butter);
+
     }
 
     public static void observeFridge() {
