@@ -31,8 +31,8 @@ public class Main {
 
 //        tests
 //        recipe1.setRating(2);
-//        recipe1.removeIngredient(onion);
+       recipe1.removeIngredient(egg);
 //        recipe1.cleanTags();
-//        recipe1.showRecipe();
+       recipe1.showRecipe();
     }
 }

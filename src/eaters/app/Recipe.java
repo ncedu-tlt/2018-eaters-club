@@ -1,15 +1,15 @@
 package eaters.app;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Recipe {
-    String name;
-    String description;
-    int rating = 0;
-    List<Ingredient> ingredients = new ArrayList<>();
-    List<Tag> tags = new ArrayList<>();
+    private String name;
+    private String description;
+    private int rating;
+    private List<Ingredient> ingredients = new ArrayList<>();
+    private List<Tag> tags = new ArrayList<>();
 
     public Recipe(String name, String descriprion) {
         this.name = name;
@@ -17,31 +17,44 @@ public class Recipe {
     }
 
     public void addIngredient(Ingredient ingredient) {
-        this.ingredients.add(ingredient);
+        ingredients.add(ingredient);
         System.out.println(ingredient.name + " has been added");
     }
 
     public void removeIngredient(Ingredient ingredient) {
-        for (Ingredient x : this.ingredients) {
-            if (x == ingredient) {
-                this.ingredients.remove(x);
-                System.out.println(x.name + " has been removed");
+        Iterator<Ingredient> it = ingredients.iterator();
+
+//        for (Ingredient x : ingredients) {
+//            if (x == ingredient) {
+//                this.ingredients.remove(x);
+//
+//
+//                System.out.println(x.name + " has been removed");
+//            } else {
+//                System.out.println("There is no specified ingerdient!");
+//            }
+//        }
+
+        while (it.hasNext()){
+            if (it.next().equals(ingredient)) {
+                System.out.println(it.next().name + " has been removed");
+                it.remove();
             } else {
-                System.out.println("There is no specified ingerdient!");
+                System.out.println("There is no specified ingredient!");
             }
         }
     }
 
     public void cleanIngredients() {
-        this.ingredients.clear();
+        ingredients.clear();
         System.out.println("All ingredients has been removed!");
     }
 
     public void showIngredients() {
-        if (this.ingredients.isEmpty()) {
+        if (ingredients.isEmpty()) {
             System.out.println("There is no ingredients!");
         } else {
-            for (Ingredient x : this.ingredients)
+            for (Ingredient x : ingredients)
                 System.out.print(x.name + " ");
         }
         System.out.println("\n");
@@ -58,10 +71,10 @@ public class Recipe {
 
     public void showRating() {
         System.out.print("Rating: ");
-        if (this.rating == 0) {
+        if (rating == 0) {
             System.out.println("Unrated");
         } else {
-            for (int x = 0; x < this.rating; x++) {
+            for (int x = 0; x < rating; x++) {
                 System.out.print("* ");
             }
             System.out.println("\n");
@@ -69,14 +82,14 @@ public class Recipe {
     }
 
     public void addTag(Tag tag) {
-        this.tags.add(tag);
+        tags.add(tag);
         System.out.println("The tag: " + tag.name + " has been added");
     }
 
     public void removeTag(Tag tag) {
-        for (Tag x : this.tags)
+        for (Tag x : tags)
             if (x == tag) {
-                this.tags.remove(x);
+                tags.remove(x);
                 System.out.println("The tag: " + x.name + " has been removed");
             } else {
                 System.out.println("There is no specified tag!");
@@ -86,23 +99,23 @@ public class Recipe {
 
     public void showTags() {
         System.out.print("Tags: ");
-        if (this.tags.isEmpty()) {
+        if (tags.isEmpty()) {
             System.out.println("There is no tags");
         } else {
-            for (Tag x : this.tags)
+            for (Tag x : tags)
                 System.out.print("#" + x.name + " ");
         }
     }
 
     public void cleanTags() {
-        this.tags.clear();
+        tags.clear();
         System.out.println("All tags has been removed!");
     }
 
     public void showRecipe() {
-        System.out.println(this.name + "\n");
-        System.out.println(this.description + "\n");
-        System.out.print("Чтобы приготовить: " + this.name + " необходимо: ");
+        System.out.println(name + "\n");
+        System.out.println(description + "\n");
+        System.out.print("Чтобы приготовить: " + name + " необходимо: ");
         showIngredients();
         showRating();
         showTags();
