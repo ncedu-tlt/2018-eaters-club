@@ -1,6 +1,5 @@
 package eaters.app;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -26,21 +25,11 @@ public class Recipe {
     public void removeIngredient(Ingredient ingredient) {
         Iterator<Ingredient> it = ingredients.iterator();
 
-//        for (Ingredient x : ingredients) {
-//            if (x == ingredient) {
-//                this.ingredients.remove(x);
-//
-//
-//                System.out.println(x.name + " has been removed");
-//            } else {
-//                System.out.println("There is no specified ingerdient!");
-//            }
-//        }
-
         while (it.hasNext()) {
             if (it.next().equals(ingredient)) {
-                System.out.println(it.next().name + " has been removed");
+                System.out.println(ingredient.name + " has been removed");
                 it.remove();
+                break;
             } else {
                 System.out.println("There is no specified ingredient!");
             }
@@ -78,13 +67,17 @@ public class Recipe {
     }
 
     public void removeTag(Tag tag) {
-        for (Tag x : tags)
-            if (x == tag) {
-                tags.remove(x);
-                System.out.println("The tag: " + x.name + " has been removed");
+        Iterator<Tag> it = tags.iterator();
+
+        while (it.hasNext()) {
+            if (it.next() == tag) {
+                it.remove();
+                System.out.println("The tag: " + tag.name + " has been removed");
+                break;
             } else {
                 System.out.println("There is no specified tag!");
             }
+        }
     }
 
     public void showTags() {

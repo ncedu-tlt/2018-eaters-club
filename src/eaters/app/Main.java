@@ -30,8 +30,9 @@ public class Main {
         recipe1.showRecipe();
 
 //        tests
-       recipe1.removeIngredient(egg);
-//        recipe1.cleanTags();
-       recipe1.showRecipe();
+//      recipe1.removeIngredient(egg);
+//      recipe1.removeTag(tag2);
+//      recipe1.cleanTags();
+//      recipe1.showRecipe();
     }
 }
