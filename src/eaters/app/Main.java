@@ -9,8 +9,8 @@ public class Main {
         Ingredient onion = new Ingredient("Лук");
 
 //        initialize Tags
-        Tag tag1 = new Tag ("вкусняха!", "#");
-        Tag tag2 = new Tag ("больше лука!", "#");
+        Tag tag1 = new Tag ("вкусняха", "#");
+        Tag tag2 = new Tag ("больше лука", "#");
 
 //        initialize Recipe
         Recipe recipe1 = new Recipe("Яичница", "Яичница — королева завтраков.");
@@ -30,7 +30,6 @@ public class Main {
         recipe1.showRecipe();
 
 //        tests
-//        recipe1.setRating(2);
        recipe1.removeIngredient(egg);
 //        recipe1.cleanTags();
        recipe1.showRecipe();

@@ -1,14 +1,16 @@
 package eaters.app;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
 public class Recipe {
     private String name;
     private String description;
-    private int rating;
-    private List<Ingredient> ingredients = new ArrayList<>();
+    private Rating rating = new Rating();
+    private HashSet<Ingredient> ingredients = new HashSet<>();
     private List<Tag> tags = new ArrayList<>();
 
     public Recipe(String name, String descriprion) {
@@ -35,7 +37,7 @@ public class Recipe {
 //            }
 //        }
 
-        while (it.hasNext()){
+        while (it.hasNext()) {
             if (it.next().equals(ingredient)) {
                 System.out.println(it.next().name + " has been removed");
                 it.remove();
@@ -47,38 +49,27 @@ public class Recipe {
 
     public void cleanIngredients() {
         ingredients.clear();
-        System.out.println("All ingredients has been removed!");
     }
 
     public void showIngredients() {
+        Iterator<Ingredient> it = ingredients.iterator();
+
         if (ingredients.isEmpty()) {
             System.out.println("There is no ingredients!");
         } else {
-            for (Ingredient x : ingredients)
-                System.out.print(x.name + " ");
+            while (it.hasNext()) {
+                System.out.print(it.next().name + " ");
+            }
         }
         System.out.println("\n");
     }
 
     public void setRating(int rating) {
-        final int[] ratings = {1, 2, 3, 4, 5};
-        if (rating > ratings.length - 1 || rating < 0) {
-            System.out.println("The rating should be 1..5");
-        } else {
-            this.rating = rating;
-        }
+        this.rating.setRating(rating);
     }
 
     public void showRating() {
-        System.out.print("Rating: ");
-        if (rating == 0) {
-            System.out.println("Unrated");
-        } else {
-            for (int x = 0; x < rating; x++) {
-                System.out.print("* ");
-            }
-            System.out.println("\n");
-        }
+        this.rating.showRating();
     }
 
     public void addTag(Tag tag) {
@@ -96,20 +87,16 @@ public class Recipe {
             }
     }
 
-
     public void showTags() {
         System.out.print("Tags: ");
-        if (tags.isEmpty()) {
-            System.out.println("There is no tags");
-        } else {
-            for (Tag x : tags)
-                System.out.print("#" + x.name + " ");
+        for (Tag x : tags) {
+            System.out.print("#" + x.name + " ");
         }
+        System.out.println("\n");
     }
 
     public void cleanTags() {
         tags.clear();
-        System.out.println("All tags has been removed!");
     }
 
     public void showRecipe() {
