@@ -2,7 +2,6 @@ package eaters.app;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.SimpleTimeZone;
 
 public class User {
     private String firstName;
@@ -12,8 +11,8 @@ public class User {
     private String regDate;
 
     public User(String firstName, String lastName, String email, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstName = new FirstName(firstName).value;
+        this.lastName = new LastName(lastName).value;
         this.email = new Email(email).value;
         this.password = new Password(password).value;
 
@@ -21,7 +20,7 @@ public class User {
         regDate = dateFormat.format(new Date());
     }
 
-    public void displayUserInfo(){
-        System.out.println(firstName+"\n"+lastName+"\n"+email+"\n"+password+"\n"+regDate+"\n");
+    public void displayUserInfo() {
+        System.out.println(firstName + "\n" + lastName + "\n" + email + "\n" + password + "\n" + regDate + "\n");
     }
 }

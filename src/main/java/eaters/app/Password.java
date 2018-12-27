@@ -1,12 +1,13 @@
 package eaters.app;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
 public class Password {
-    int value;
+    int value = 0;
 
     public Password(String password) {
-        value = password.hashCode();
+        if (password.equals(null)){
+            System.out.println("The password can't be void!\n");
+        } else {
+            value = password.hashCode();
+        }
     }
 }

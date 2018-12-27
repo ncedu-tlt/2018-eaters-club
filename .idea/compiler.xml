@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="2018-eaters-club" target="1.5" />
+      <module name="2018-eaters-club" target="7" />
     </bytecodeTargetLevel>
   </component>
 </project>
