@@ -1,13 +1,22 @@
 package eaters.app;
 
-public class LastName {
-    String value = null;
+import java.util.Scanner;
 
-    public LastName(String lastName) {
-        if (lastName.equals(null)){
-            System.out.println("The last name can't be void!\n");
-        } else {
-            value = lastName;
+public class LastName {
+    String lastName = "";
+
+    Scanner input = new Scanner(System.in);
+    String command;
+
+    public LastName() {
+        while (lastName.equals("")) {
+            System.out.println("Last name:");
+            command = input.nextLine();
+            if (command.equals("")) {
+                System.out.println("The name can't be void!\n");
+            } else {
+                lastName = command;
+            }
         }
     }
 }

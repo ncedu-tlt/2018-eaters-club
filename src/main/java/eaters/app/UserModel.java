@@ -17,6 +17,19 @@ public class UserModel {
 
     String command;
 
+    public UserModel() {
+        Iterator<User> iterator = users.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next().getEmail().equals("admin")) {
+                return;
+            }
+            final User admin = new User("Admin", "Admin", "admin", "admin".hashCode());
+            admin.role = admin.roles[0];
+            saveUsers();
+
+        }
+    }
+
     public Boolean checkFile() {
         return (file.exists());
     }
@@ -51,7 +64,7 @@ public class UserModel {
                     break;
 
                 case 2:
-                    System.out.println("User role demo\n\nChoose the option:\n1-Register\n2-Sign in\n3-Back to Main menu\n0-exit\n");
+                    System.out.println("User role demo\n\nChoose the option:\n1-Register new user\n2-Sign in\n3-Back to Main menu\n0-exit\n");
                     command = input.nextLine();
 
                     switch (command) {
@@ -82,12 +95,18 @@ public class UserModel {
 
                     switch (command) {
                         case "1":
+                            registerUser();
                             break;
 
                         case "2":
+                            editUser();
                             break;
 
                         case "3":
+                            removeUser();
+                            break;
+
+                        case "4":
                             activeMenu = 1;
                             break;
 
@@ -133,26 +152,146 @@ public class UserModel {
     }
 
     public void registerUser() {
-        String firstName = null;
-        String lastName = null;
-        String email = null;
-        String password = null;
+        String firstName;
+        String lastName;
+        String email;
+        int password;
 
-        while (firstName.equals(null)){
-            System.out.println("First name:");
-            firstName = new FirstName(command).value;
-        }
+        email = new Email(users).email;
+        firstName = new FirstName().firstName;
+        lastName = new LastName().lastName;
+        password = new Password().password;
 
         users.add(new User(firstName, lastName, email, password));
         saveUsers();
+        System.out.println("Account: " + email + " successfully created! Press any key to continue...");
+        command = input.nextLine();
     }
 
     public void editUser() {
+        Iterator<User> iterator = users.iterator();
+        User currentUser;
+        User backupUser;
 
+        System.out.println("Please choose the account to edit:");
+        displayAccounts();
+        command = input.nextLine();
+
+        while (iterator.hasNext()) {
+            currentUser = iterator.next();
+            if (currentUser.getEmail().equals(command)) {
+                backupUser = currentUser;
+                System.out.println("Check info:");
+                currentUser.displayUserInfo();
+
+                int isRunned = 1;
+
+                while (isRunned == 1) {
+                    System.out.println("What you want to change? 1-First name 2-Last name 3-Email 4-Password");
+                    command = input.nextLine();
+                    switch (command) {
+                        case "1":
+                            currentUser.setFirstName(new FirstName().firstName);
+
+                            System.out.println("Confirm the action: y/n");
+                            currentUser.displayUserInfo();
+                            command = input.nextLine();
+
+                            switch (command) {
+                                case "y":
+                                    System.out.println("Done. Press any key to continue...");
+                                    command = input.nextLine();
+                                    isRunned = 0;
+                                    break;
+
+                                case "n":
+                                    currentUser.setFirstName(backupUser.getFirstName());
+                                    break;
+
+                                default:
+                                    break;
+                            }
+                            break;
+
+                        case "2":
+                            currentUser.setLastName(new LastName().lastName);
+
+                            System.out.println("Confirm the action: y/n");
+                            currentUser.displayUserInfo();
+                            command = input.nextLine();
+
+                            switch (command) {
+                                case "y":
+                                    System.out.println("Done. Press any key to continue...");
+                                    command = input.nextLine();
+                                    isRunned = 0;
+                                    break;
+
+                                case "n":
+                                    currentUser.setLastName(backupUser.getLastName());
+                                    break;
+
+                                default:
+                                    break;
+                            }
+                            break;
+
+                        case "3":
+                            currentUser.setEmail(new Email(users).email);
+
+                            System.out.println("Confirm the action: y/n");
+                            currentUser.displayUserInfo();
+                            command = input.nextLine();
+
+                            switch (command) {
+                                case "y":
+                                    System.out.println("Done. Press any key to continue...");
+                                    command = input.nextLine();
+                                    isRunned = 0;
+                                    break;
+
+                                case "n":
+                                    currentUser.setEmail(backupUser.getEmail());
+                                    break;
+
+                                default:
+                                    break;
+                            }
+                            break;
+                        case "4":
+                            currentUser.setPassword(new Password().password);
+                            System.out.println("Done. Press any key to continue...");
+                            isRunned = 0;
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+                iterator.remove();
+                users.add(currentUser);
+                saveUsers();
+                return;
+            }
+        }
+        System.out.println("Specified account is not exist!");
     }
 
-    public void removeUser() {
 
+    public void removeUser() {
+        System.out.println("Please choose the account to delete:");
+        displayAccounts();
+        command = input.nextLine();
+        Iterator<User> iterator = users.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next().getEmail().equals(command)) {
+                iterator.remove();
+                System.out.println(command + " has been deleted");
+                saveUsers();
+                break;
+            }
+        }
+        System.out.println("Specified account is not exist!");
     }
 
     public void saveUsers() {
@@ -167,10 +306,12 @@ public class UserModel {
         }
     }
 
-    public void displayUsers() {
+    public void displayAccounts() {
         Iterator<User> iterator = users.iterator();
         while (iterator.hasNext()) {
-            iterator.next().displayUserInfo();
+            iterator.next().displayEmail();
         }
+        System.out.println();
     }
 }
+
