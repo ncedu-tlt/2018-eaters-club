@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 public class Ingredient {
-    private String name;                                    // Name of ingredient
+    private String getName;                                    // Name of ingredient
     private Group group;                                    // Name of ingredient
     private Date manufactureDate;                           // Date of manufacturing
     private Date shelfLifeDate;                             // Shelf life date
@@ -55,7 +55,7 @@ public class Ingredient {
         tags.clear();
     }
 
-    public void setName(String name) { this.name = name; }
+    public void setName(String name) { this.getName = name; }
 
     public void setGroup(Group group) { this.group = group; }
 
@@ -82,7 +82,7 @@ public class Ingredient {
 
     public double getCarbohydrates() { return carbohydrates; }
 
-    public String getName() { return name; }
+    public String getName() { return getName; }
 
     public Group getGroup() { return group; }
 
