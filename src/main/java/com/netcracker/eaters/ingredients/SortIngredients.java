@@ -1,4 +1,4 @@
-package eaters.ingredients;
+package com.netcracker.eaters.ingredients;
 
 import java.util.Collections;
 import java.util.Comparator;

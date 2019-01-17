@@ -1,4 +1,4 @@
-package eaters.usermodel;
+package com.netcracker.eaters.usermodel;
 
 import java.util.HashSet;
 import java.util.Iterator;

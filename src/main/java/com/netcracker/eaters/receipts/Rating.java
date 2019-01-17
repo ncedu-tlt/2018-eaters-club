@@ -1,4 +1,4 @@
-package eaters.receipts;
+package com.netcracker.eaters.receipts;
 
 public class Rating {
     int value;

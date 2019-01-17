@@ -1,4 +1,4 @@
-package eaters.ingredients;
+package com.netcracker.eaters.ingredients;
 
 public enum Group {
     Meat,

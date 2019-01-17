@@ -1,4 +1,4 @@
-package eaters.usermodel;
+package com.netcracker.eaters.usermodel;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

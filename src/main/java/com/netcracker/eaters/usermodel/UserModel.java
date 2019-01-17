@@ -1,4 +1,4 @@
-package eaters.usermodel;
+package com.netcracker.eaters.usermodel;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -19,6 +19,12 @@ public class UserModel {
 
     public UserModel() {
         Iterator<User> iterator = users.iterator();
+
+        //        Загружаем данные при инициализации экземпляра класса
+        if (checkFile()) {
+            loadUsers();
+        }
+
         while (iterator.hasNext()) {
             if (iterator.next().getEmail().equals("admin")) {
                 return;
@@ -26,11 +32,6 @@ public class UserModel {
             final User admin = new User("Admin", "Admin", "admin", "admin".hashCode());
             admin.role = admin.roles[0];
             saveUsers();
-        }
-
-//        Загружаем данные при инициализации экземпляра класса
-        if (checkFile()) {
-            loadUsers();
         }
     }
     //        Проверяем существование файла с данными о пользователях

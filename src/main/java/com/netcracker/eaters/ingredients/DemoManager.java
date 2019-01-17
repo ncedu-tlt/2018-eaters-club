@@ -1,4 +1,4 @@
-package eaters.ingredients;
+package com.netcracker.eaters.ingredients;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -14,6 +14,66 @@ import static java.lang.String.valueOf;
 public class DemoManager {
     private static List<Ingredient> ingredients = new ArrayList<Ingredient>();
     SortIngredients sortCalories = new SortIngredients();
+
+    public void menu() throws ParseException {
+        boolean isRunning = true;
+
+        Scanner scanner = new Scanner(System.in);
+
+        // Наполнение холодильника продуктами
+        fillFridge();
+
+        System.out.println("Добро пожаловать в холодильник!");
+
+        while (isRunning) {
+            System.out.println("Выберете действие:\n" +
+                    "1. Обзор холодильника\n" +
+                    "2. Обзор холодильника (короткий список)\n" +
+                    "3. Сортировка ингредиентов по сроку годности\n" +
+                    "4. Сортировка ингредиентов по калорийности\n" +
+                    "5. Добавить ингредиент\n" +
+                    "6. Использовать ингредиент\n" +
+                    "7. Удалить ингредиент\n" +
+                    "0. Выход");
+
+            String menu = scanner.nextLine();
+
+            switch (menu) {
+                case "1":
+                    // Что в холодильнике?
+                    observeFridge();
+                    break;
+                case "2":
+                    // Короткий список ингредиентов
+                    observeFridgeShortList();
+                    break;
+                case "3":
+                    // Сортировка всех продуктов по сроку годности (от наименьшего к наибольшему)
+                    sortIngredientShelfLifeDate();
+                    break;
+                case "4":
+                    // Сортировка всех продуктов по калорийности (от большего к меньшему)
+                    sortIngredientCalories();
+                    break;
+                case "5":
+                    // Добавить ингредиент
+                    add();
+                    break;
+                case "6":
+                    // Использовать ингредиент
+                    spend();
+                    break;
+                case "7":
+                    // Удалить ингредиент
+                    remove();
+                    break;
+                case "0":
+                    isRunning = false;
+                default:
+                    break;
+            } // switch(menu)
+        } // while(isRunning)
+    }
 
     public static void fillFridge() throws ParseException {
         // Create ingredients
@@ -71,7 +131,7 @@ public class DemoManager {
 
         milk.setPFC(3.2, 3.6, 4.8);
         meat.setPFC(20.4, 12.7, 0.5);
-        bread.setPFC(6.8,1.4, 45.6);
+        bread.setPFC(6.8, 1.4, 45.6);
         agg.setPFC(12.7, 10.7, 0.8);
         butter.setPFC(0.5, 82.5, 0.8);
 
@@ -221,9 +281,10 @@ public class DemoManager {
         int value = parseInt(scanner.nextLine());
 
         for (Ingredient tmp : ingredients) {
-            if (hashCodeID == tmp.getHashCodeID() ) {
+            if (hashCodeID == tmp.getHashCodeID()) {
                 ingredientToSpend = tmp;
-            };
+            }
+            ;
         }
 
         ingredients.remove(ingredientToSpend);
@@ -239,9 +300,10 @@ public class DemoManager {
         Scanner scanner = new Scanner(System.in);
         int hashCodeID = parseInt(scanner.nextLine());
         for (Ingredient tmp : ingredients) {
-            if (hashCodeID == tmp.getHashCodeID() ) {
+            if (hashCodeID == tmp.getHashCodeID()) {
                 ingredientToRemove = tmp;
-            };
+            }
+            ;
         }
         ingredients.remove(ingredientToRemove);
         System.out.println("Ингредиент удален из холодильника.");
@@ -249,9 +311,13 @@ public class DemoManager {
 
     public void sortIngredientShelfLifeDate() {
         sortCalories.sortIngredientShelfLifeDate(ingredients);
-    };
+    }
+
+    ;
 
     public void sortIngredientCalories() {
         sortCalories.sortIngredientCalories(ingredients);
-    };
+    }
+
+    ;
 }

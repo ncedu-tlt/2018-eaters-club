@@ -1,6 +1,6 @@
-package eaters.receipts;
+package com.netcracker.eaters.receipts;
 
-import eaters.ingredients.Ingredient;
+import com.netcracker.eaters.ingredients.Ingredient;
 
 import java.util.ArrayList;
 import java.util.HashSet;

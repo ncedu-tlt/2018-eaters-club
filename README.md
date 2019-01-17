@@ -1,2 +1,9 @@
-# Диаграмма классов
-![users_model](users_model.png "Модель пользователя")
+## Build
+```
+mvn install
+```
+
+## Run
+```
+java -jar common-1.0-SNAPSHOT.jar
+```
