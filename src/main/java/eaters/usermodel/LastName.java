@@ -1,4 +1,4 @@
-package eaters.app;
+package eaters.usermodel;
 
 import java.util.Scanner;
 

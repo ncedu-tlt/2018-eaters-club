@@ -1,4 +1,4 @@
-package eaters.app;
+package eaters.usermodel;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -26,11 +26,15 @@ public class UserModel {
             final User admin = new User("Admin", "Admin", "admin", "admin".hashCode());
             admin.role = admin.roles[0];
             saveUsers();
+        }
 
+//        Загружаем данные при инициализации экземпляра класса
+        if (checkFile()) {
+            loadUsers();
         }
     }
-
-    public Boolean checkFile() {
+    //        Проверяем существование файла с данными о пользователях
+    private Boolean checkFile() {
         return (file.exists());
     }
 
@@ -122,6 +126,7 @@ public class UserModel {
         }
     }
 
+    //            Загружаем данные из файла в память
     public void loadUsers() {
         try {
 //            Читаем json в строку
