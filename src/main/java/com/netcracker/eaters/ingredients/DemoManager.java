@@ -1,4 +1,4 @@
-package eaters.app;
+package eaters.ingredients;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

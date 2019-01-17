@@ -1,4 +1,4 @@
-package eaters.app;
+package eaters.ingredients;
 
 public enum Group {
     Meat,

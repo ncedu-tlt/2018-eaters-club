@@ -1,4 +1,6 @@
-package eaters.app;
+package eaters.receipts;
+
+import eaters.ingredients.Ingredient;
 
 import java.util.ArrayList;
 import java.util.HashSet;

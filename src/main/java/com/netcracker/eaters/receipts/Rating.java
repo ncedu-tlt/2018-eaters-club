@@ -1,4 +1,4 @@
-package eaters.app;
+package eaters.receipts;
 
 public class Rating {
     int value;

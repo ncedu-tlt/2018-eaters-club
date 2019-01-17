@@ -1,4 +1,4 @@
-package eaters.app;
+package eaters.ingredients;
 
 import java.util.Collections;
 import java.util.Comparator;

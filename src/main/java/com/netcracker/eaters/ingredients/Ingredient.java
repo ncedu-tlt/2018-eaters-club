@@ -1,4 +1,4 @@
-package eaters.app;
+package eaters.ingredients;
 
 import java.util.Date;
 import java.util.Collection;
