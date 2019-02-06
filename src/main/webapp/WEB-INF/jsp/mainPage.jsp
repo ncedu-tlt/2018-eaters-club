@@ -50,7 +50,18 @@
             <!--           Categories-->
             <div class="col-2 p-0">
                 <div class="rounded mr-3" style="height: 100%; background-color: #ffe5b4;">
+
                     <p class="text-center">Categories</p>
+                    <div class="ml-3">
+                        <i class="fas fa-drumstick-bite fa-lg"></i>
+                        <a href="#" style="color: black">Мясные блюда</a><br />
+                        <i class="fas fa-carrot fa-lg"></i>
+                        <a href="#" style="color: black">Вегетарианские блюда</a><br />
+                        <i class="fas fa-birthday-cake fa-lg"></i>
+                        <a href="#" style="color: black">Дессерты</a><br />
+                        <i class="fas fa-cocktail fa-lg"></i>
+                        <a href="#" style="color: black">Напитки</a><br />
+                    </div>
                 </div>
             </div>
 
