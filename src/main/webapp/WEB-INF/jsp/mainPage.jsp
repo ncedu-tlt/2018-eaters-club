@@ -24,22 +24,22 @@
 <body>
 
     <nav class="navbar navbar-expand-md fixed-top" style="background-color: #f2b442">
-        <a class="navbar-brand">
-            <!--            <img src="../../../resources/static/img/eaters_club_logo.png" width="80" height="80" alt="">-->
-            Eaters Club
+        <a class="navbar-brand" style="position: absolute">
+            <i class="fas fa-utensils fa-lg" style="position: relative; bottom: 3px;"></i>
+            <span class="pacifico-font">Eaters Club</span>
         </a>
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <form class="form-inline offset-md-1">
+            <form class="form-inline offset-md-2">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-warning" type="submit" style="background-color: #ffcd71">Search</button>
             </form>
             <ul class="nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Log In</a>
+                    <button class="btn btn-warning" href="#" style="background-color: #ffcd71">Log In</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
+                    <button class="btn btn-warning ml-1" href="#" style="font-weight: bold; color: #ffcd71; background-color: #1a1a1a">Register</button>
                 </li>
             </ul>
         </div>
@@ -56,7 +56,7 @@
 
             <!--            Main content-->
             <div class="col-8 p-0">
-                <div class="rounded mr-3" style="background-color: #ffe5b4;">
+                <div class="rounded mr-3" style="background-color: rgba(255, 255, 255, 0)">
                     <p class="text-center">Main content</p>
 
                     <div id="carouselExampleIndicators" class="carousel slide d-flex justify-content-center" data-ride="carousel">
@@ -72,11 +72,11 @@
 
                                     <!-- Rating block-->
                                     <div class="rating">
-                                        <span class="fa fa-star" id="star1" onclick="add(this,1)"></span>
-                                        <span class="fa fa-star" id="star2" onclick="add(this,2)"></span>
-                                        <span class="fa fa-star" id="star3" onclick="add(this,3)"></span>
-                                        <span class="fa fa-star" id="star4" onclick="add(this,4)"></span>
-                                        <span class="fa fa-star" id="star5" onclick="add(this,5)"></span>
+                                        <span class="fa fa-star" id="star1" onclick="add(1)"></span>
+                                        <span class="fa fa-star" id="star2" onclick="add(2)"></span>
+                                        <span class="fa fa-star" id="star3" onclick="add(3)"></span>
+                                        <span class="fa fa-star" id="star4" onclick="add(4)"></span>
+                                        <span class="fa fa-star" id="star5" onclick="add(5)"></span>
                                     </div>
 
                                     <div class="card-body">
@@ -96,11 +96,11 @@
 
                                     <!-- Rating block-->
                                     <div class="rating">
-                                        <span class="fa fa-star" id="star1" onclick="add(this,1)"></span>
-                                        <span class="fa fa-star" id="star2" onclick="add(this,2)"></span>
-                                        <span class="fa fa-star" id="star3" onclick="add(this,3)"></span>
-                                        <span class="fa fa-star" id="star4" onclick="add(this,4)"></span>
-                                        <span class="fa fa-star" id="star5" onclick="add(this,5)"></span>
+                                        <i class="fa fa-star" id="star1" onclick="add(1)"></i>
+                                        <i class="fa fa-star" id="star2" onclick="add(2)"></i>
+                                        <i class="fa fa-star" id="star3" onclick="add(3)"></i>
+                                        <i class="fa fa-star" id="star4" onclick="add(4)"></i>
+                                        <i class="fa fa-star" id="star5" onclick="add(5)"></i>
                                     </div>
 
                                     <div class="card-body">
@@ -120,11 +120,11 @@
 
                                     <!-- Rating block-->
                                     <div class="rating">
-                                        <span class="fa fa-star" id="star1" onclick="add(this,1)"></span>
-                                        <span class="fa fa-star" id="star2" onclick="add(this,2)"></span>
-                                        <span class="fa fa-star" id="star3" onclick="add(this,3)"></span>
-                                        <span class="fa fa-star" id="star4" onclick="add(this,4)"></span>
-                                        <span class="fa fa-star" id="star5" onclick="add(this,5)"></span>
+                                        <span class="fa fa-star" id="star1" onclick="add(1)"></span>
+                                        <span class="fa fa-star" id="star2" onclick="add(2)"></span>
+                                        <span class="fa fa-star" id="star3" onclick="add(3)"></span>
+                                        <span class="fa fa-star" id="star4" onclick="add(4)"></span>
+                                        <span class="fa fa-star" id="star5" onclick="add(5)"></span>
                                     </div>
 
                                     <div class="card-body">
@@ -157,7 +157,7 @@
 
         <div class="row px-3">
             <!-- Tags cloud-->
-            <div class="col-12 rounded" style="height: 10em; background-color: #ffe5b4;">
+            <div class="col-12 rounded mb-3" style="height: 10em; background-color: #ffe5b4;">
                 <p class="text-center">We recommend</p>
 
 
