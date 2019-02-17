@@ -33,7 +33,7 @@
                         <index>true</index>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.netcracker.eaters.app.Main</mainClass>
+                            <mainClass>com.netcracker.eaters.Application</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

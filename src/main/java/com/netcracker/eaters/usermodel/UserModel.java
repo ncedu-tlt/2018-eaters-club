@@ -69,7 +69,7 @@ public class UserModel {
                     break;
 
                 case 2:
-                    System.out.println("User role demo\n\nChoose the option:\n1-Register new user\n2-Sign in\n3-Back to Main menu\n0-exit\n");
+                    System.out.println("User role demo\n\nChoose the option:\n1-Register new user\n2-Sign in\n3-Back to Application menu\n0-exit\n");
                     command = input.nextLine();
 
                     switch (command) {
@@ -95,7 +95,7 @@ public class UserModel {
                     break;
 
                 case 3:
-                    System.out.println("Admin role demo\n\nChoose the option:\n1-Register new user\n2-Edit user data\n3-Remove user\n4-Back to Main menu\n0-exit\n");
+                    System.out.println("Admin role demo\n\nChoose the option:\n1-Register new user\n2-Edit user data\n3-Remove user\n4-Back to Application menu\n0-exit\n");
                     command = input.nextLine();
 
                     switch (command) {
