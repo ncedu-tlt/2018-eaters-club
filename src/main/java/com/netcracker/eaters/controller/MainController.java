@@ -10,4 +10,9 @@ public class MainController {
     public String index(Model model) {
         return "index";
     }
+
+    @RequestMapping("/login_form.html")
+    public String loginForm(Model model) {
+        return "login_form";
+    }
 }
