@@ -58,3 +58,13 @@ body {
 #card-description-1 {
     height: 3em;
 }
+
+#login-button {
+    background-color: #ffcd71;
+}
+
+#register-button {
+    font-weight: bold;
+    color: #ffcd71;
+    background-color: #1a1a1a
+}

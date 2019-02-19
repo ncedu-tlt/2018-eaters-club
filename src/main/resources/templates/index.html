@@ -35,13 +35,14 @@
             </form>
             <ul class="nav ml-auto">
                 <li class="nav-item">
-                    <button class="btn btn-warning" id="loginButton" href="#" style="background-color: #ffcd71">Log In</button>
+                    <button class="btn btn-warning ml-1" id="login-button" data-toggle="modal" data-target="#exampleModalCenter">Log In</button>
                 </li>
                 <li class="nav-item">
-                    <button class="btn btn-warning ml-1" href="#" style="font-weight: bold; color: #ffcd71; background-color: #1a1a1a">Register</button>
+                    <button class="btn btn-warning ml-1" id="register-button" href="#">Register</button>
                 </li>
             </ul>
         </div>
+
     </nav>
 
     <main role="main" class="container-fluid">
@@ -165,6 +166,10 @@
             </div>
         </div>
 
+    </main>
+    <!-- /.container -->
+
+    <footer>
         <div class="row px-3">
             <!-- Tags cloud-->
             <div class="col-12 rounded mb-3" style="height: 10em; background-color: #ffe5b4;">
@@ -173,8 +178,11 @@
 
             </div>
         </div>
-    </main><!-- /.container -->
+    </footer>
 
+    <!--    Modal Login window-->
+    <div th:insert="fragments/loginModal.html">
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -189,7 +197,7 @@
 
     <!-- Login form script
     ================================================== -->
-    <script src="/js/login_form.js"></script>
+    <!--    <script src="/js/login_form.js"></script>-->
 
 </body>
 
