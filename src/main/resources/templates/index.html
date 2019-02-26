@@ -35,10 +35,10 @@
             </form>
             <ul class="nav ml-auto">
                 <li class="nav-item">
-                    <button class="btn btn-warning ml-1" id="login-button" data-toggle="modal" data-target="#exampleModalCenter">Log In</button>
+                    <button class="btn btn-warning ml-1" id="login-button" data-toggle="modal" data-target="#loginModal">Log In</button>
                 </li>
                 <li class="nav-item">
-                    <button class="btn btn-warning ml-1" id="register-button" href="#">Register</button>
+                    <button class="btn btn-warning ml-1" id="register-button" data-toggle="modal" data-target="#registerModal">Register</button>
                 </li>
             </ul>
         </div>
@@ -180,8 +180,8 @@
         </div>
     </footer>
 
-    <!--    Modal Login window-->
-    <div th:insert="fragments/loginModal.html">
+    <!--    Modal window-->
+    <div th:insert="fragments/mainModal">
     </div>
 
     <!-- Bootstrap core JavaScript

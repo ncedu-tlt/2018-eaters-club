@@ -1,0 +1,80 @@
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form action="/login" method="post">
+                    <table>
+                        <tr>
+                            <td>
+                                <strong>Name:</strong>
+                            </td>
+                            <td>
+                                <input name="username" maxlength="25" size="20">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Password:</strong>
+                            </td>
+                            <td>
+                                <input name="userpassword" type="password" maxlength="25" size="20">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" value="LogIn" class="btn btn-primary">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form action="/register" method="post">
+                    <table>
+                        <tr>
+                            <td>
+                                <strong>First name:</strong>
+                            </td>
+                            <td>
+                                <input name="firstname" maxlength="25" size="20">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Last name:</strong>
+                            </td>
+                            <td>
+                                <input name="lastname" maxlength="25" size="20">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>E-mail:</strong>
+                            </td>
+                            <td>
+                                <input name="email" maxlength="25" size="20">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Password:</strong>
+                            </td>
+                            <td>
+                                <input name="userpassword" type="password" maxlength="25" size="20">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" value="Sign Up" class="btn btn-primary">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
