@@ -1,4 +1,5 @@
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true" xmlns:th="http://www.thymeleaf.org">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body">
@@ -34,14 +35,19 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <form action="/register" method="post">
+                <!--<form action="#" th:action="@{/index}" th:object="${greeting}" method="post">
+                    <p>Id: <input type="text" th:field="*{id}" /></p>
+                    <p>Message: <input type="text" th:field="*{content}" /></p>
+                    <p><input type="submit" value="Submit" /> <input type="reset" value="Clear form" /></p>
+                </form>-->
+                <form action="#" th:action="@{/index}" th:object="${simpleExample}" method="post">
                     <table>
                         <tr>
                             <td>
                                 <strong>First name:</strong>
                             </td>
                             <td>
-                                <input name="firstname" maxlength="25" size="20">
+                                <input type="text" th:field="*{firstname}" maxlength="25" size="20">
                             </td>
                         </tr>
                         <tr>
@@ -49,7 +55,7 @@
                                 <strong>Last name:</strong>
                             </td>
                             <td>
-                                <input name="lastname" maxlength="25" size="20">
+                                <input type="text" th:field="*{lastname}" maxlength="25" size="20">
                             </td>
                         </tr>
                         <tr>
@@ -57,7 +63,7 @@
                                 <strong>E-mail:</strong>
                             </td>
                             <td>
-                                <input name="email" maxlength="25" size="20">
+                                <input type="text" th:field="*{email}" maxlength="25" size="20">
                             </td>
                         </tr>
                         <tr>
@@ -65,14 +71,14 @@
                                 <strong>Password:</strong>
                             </td>
                             <td>
-                                <input name="userpassword" type="password" maxlength="25" size="20">
+                                <input type="text" th:field="*{userpassword}" maxlength="25" size="20">
                             </td>
                         </tr>
+                        <input type="submit" value="Sub" /> <input type="reset" value="Res" />
                     </table>
                 </form>
             </div>
             <div class="modal-footer">
-                <input type="submit" value="Sign Up" class="btn btn-primary">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
