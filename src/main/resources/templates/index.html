@@ -22,30 +22,10 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-md fixed-top" style="background-color: #f2b442">
-        <a class="navbar-brand" style="position: absolute">
-            <i class="fas fa-utensils fa-lg" style="position: relative; bottom: 3px;"></i>
-            <span class="pacifico-font">Eaters Club</span>
-        </a>
+    <!--   Header bar-->
+    <div th:insert="fragments/headerBar">
+    </div>
 
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <form class="form-inline offset-md-2">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-warning" type="submit" style="background-color: #ffcd71">Search</button>
-            </form>
-
-            <ul class="nav ml-auto">
-                <li class="nav-item">
-                    <button class="btn btn-warning ml-1" id="login-button" data-toggle="modal" data-target="#loginModal">Log In</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn btn-warning ml-1" id="register-button" data-toggle="modal" data-target="#registerModal">Register</button>
-                </li>
-            </ul>
-
-        </div>
-
-    </nav>
     <main role="main" class="container-fluid">
         <div class="row my-3 px-3">
             <!--           Categories-->
@@ -92,7 +72,7 @@
                                     </div>
 
                                     <div class="card-body">
-                                        <h5 class="card-title">Картошка по-французски</h5>
+                                        <h5 class="card-title" href="">Картошка по-французски</h5>
                                         <p class="card-text" id="card-description-1">
                                             Картошка по-французски запекается в духовке с мясом и луком. Очень простой рецепт, но картошка по-французски - это всегда очень вкусно и аппетитно.
                                         </p>

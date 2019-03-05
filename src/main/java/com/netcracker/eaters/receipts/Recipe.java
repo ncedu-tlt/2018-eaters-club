@@ -10,14 +10,15 @@ import java.util.List;
 public class Recipe {
     private String name;
     private String description;
-    private Rating rating = new Rating();
-    private HashSet<Ingredient> ingredients = new HashSet<>();
+    private Rating rating;
+    private HashSet<Ingredient> ingredients;
     private List<Tag> tags = new ArrayList<>();
 
     //Class default constructor
-    public Recipe(String name, String descriprion) {
+    public Recipe(String name, String description, int rating) {
         this.name = name;
-        this.description = descriprion;
+        this.description = description;
+        this.rating = new Rating(rating);
     }
 
     //add ingredient method ex.
@@ -57,17 +58,8 @@ public class Recipe {
         System.out.println("\n");
     }
 
-    public void setRating(int rating) {
-        this.rating.setRating(rating);
-    }
-
-    public void showRating() {
-        this.rating.showRating();
-    }
-
-    public void addTag(Tag tag) {
-        tags.add(tag);
-        System.out.println("The tag: " + tag.name + " has been added");
+    public void setRating(Rating rating) {
+        this.rating = rating;
     }
 
     public void removeTag(Tag tag) {
@@ -101,7 +93,6 @@ public class Recipe {
         System.out.println(description + "\n");
         System.out.print("Чтобы приготовить: " + name + " необходимо: ");
         showIngredients();
-        showRating();
         showTags();
     }
 }
