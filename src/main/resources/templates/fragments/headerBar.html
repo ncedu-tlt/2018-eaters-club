@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <nav class="navbar navbar-expand-md fixed-top" style="background-color: #f2b442">
     <a class="navbar-brand" style="position: absolute">
         <i class="fas fa-utensils fa-lg" style="position: relative; bottom: 3px;"></i>
@@ -13,6 +15,11 @@
 
         <ul class="nav ml-auto">
             <li class="nav-item">
+                <div sec:authorize="isAuthenticated()">
+                    <a th:inline="text">Logged in as: [[${#httpServletRequest.remoteUser}]]</a>
+                </div>
+            </li>
+            <li class="nav-item">
                 <button class="btn btn-warning ml-1" id="login-button" type="button" onclick="location.href = '/login'">Log In</button>
             </li>
             <li class="nav-item">
@@ -26,3 +33,4 @@
         </ul>
     </div>
 </nav>
+</html>
