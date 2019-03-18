@@ -27,35 +27,16 @@
                     <img src="/img/eclub_logo_large.png" alt="Eclub logo" style="width: 12em"><br />
                     <span class="pacifico-font">Eaters Club</span><br />
                 </div>
-
-                <form action="/login" class="p-2 rounded" method="post">
-                    <!--
-                    <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
-                        <div class="col-sm-9">
-                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                        </div>
-                    </div>
--->
-                    <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputEmail" placeholder="Email">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
-                        <div class="col-sm-9">
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-12">
-                            <button type="submit" class="btn btn-warning btn-block">
-                                <span class="pacifico-font">Sign in</span>
-                            </button>
-                        </div>
-                    </div>
+                <div th:if="${param.error}">
+                    Invalid username and password.
+                </div>
+                <div th:if="${param.logout}">
+                    You have been logged out.
+                </div>
+                <form th:action="@{/loginPage}" class="p-2 rounded" method="post">
+                    <div><label> User Name : <input type="text" name="username"/> </label></div>
+                    <div><label> Password: <input type="password" name="password"/> </label></div>
+                    <div><input type="submit" value="Sign In"/></div>
                 </form>
             </div>
             <div class="col-sm-4"></div>
