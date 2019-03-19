@@ -20,7 +20,9 @@
                 </div>
             </li>
             <li class="nav-item">
-                <button class="btn btn-warning ml-1" id="login-button" type="button" onclick="location.href = '/login'">Log In</button>
+                <form th:action="@{/login}" method="post">
+                   <button class="btn btn-warning ml-1" id="login-button" type="submit">Log In</button>
+                </form>
             </li>
             <li class="nav-item">
                 <button class="btn btn-warning ml-1" id="register-button" data-toggle="modal" data-target="#registerModal">Register</button>
