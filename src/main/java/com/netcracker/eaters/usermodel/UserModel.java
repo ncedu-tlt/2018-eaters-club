@@ -6,7 +6,10 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.*;
 import java.lang.reflect.Type;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
 
 public class UserModel {
     public HashSet users = new HashSet<User>();
@@ -34,6 +37,7 @@ public class UserModel {
             saveUsers();
         }
     }
+
     //        Проверяем существование файла с данными о пользователях
     private Boolean checkFile() {
         return (file.exists());

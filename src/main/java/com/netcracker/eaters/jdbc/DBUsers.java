@@ -35,7 +35,6 @@ public class DBUsers {
         preparedStatement.setString(4, "user1");
 
 
-
         preparedStatement.execute();
         System.out.println("--- INSERTED 1 ROW ---");
     }

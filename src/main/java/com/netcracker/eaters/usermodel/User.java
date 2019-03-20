@@ -31,7 +31,7 @@ public class User {
         System.out.println(email);
     }
 
-    public String getEmail(){
+    public String getEmail() {
         return email;
     }
 

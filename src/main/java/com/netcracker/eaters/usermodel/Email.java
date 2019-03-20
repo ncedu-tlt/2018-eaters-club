@@ -13,7 +13,7 @@ public class Email {
     Scanner input = new Scanner(System.in);
     String command;
 
-    public Email (HashSet users) {
+    public Email(HashSet users) {
 
         while (email.equals("")) {
             System.out.println("Email:");

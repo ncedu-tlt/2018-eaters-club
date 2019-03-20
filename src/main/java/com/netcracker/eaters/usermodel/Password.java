@@ -21,11 +21,11 @@ public class Password {
         }
     }
 
-    public void changePassword(){
+    public void changePassword() {
 
     }
 
-    private boolean checkPassword(User user){
+    private boolean checkPassword(User user) {
         return user.getPassword() == password;
     }
 }

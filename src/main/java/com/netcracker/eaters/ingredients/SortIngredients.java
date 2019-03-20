@@ -6,24 +6,24 @@ import java.util.List;
 
 public class SortIngredients {
 
-    public void sortIngredientCalories(List<Ingredient> ingredients){
+    public void sortIngredientCalories(List<Ingredient> ingredients) {
 
         Collections.sort(ingredients, IngredientCaloriesComparator);
 
         System.out.println("--------------------------- Сортировка по калорийности");
 
-        for(Ingredient ing : ingredients){
+        for (Ingredient ing : ingredients) {
             System.out.println(ing);
             System.out.println();
         }
     }
 
-    public void sortIngredientShelfLifeDate(List<Ingredient> ingredients){
+    public void sortIngredientShelfLifeDate(List<Ingredient> ingredients) {
         Collections.sort(ingredients, IngredientShelfDateComparator);
 
         System.out.println("---------------------------- Сортировка по сроку годности");
 
-        for(Ingredient ing : ingredients){
+        for (Ingredient ing : ingredients) {
             System.out.println(ing);
             System.out.println();
         }
@@ -35,7 +35,7 @@ public class SortIngredients {
             int calories2 = (int) i2.getCalories();
             int calories3 = (int) i3.getCalories();
 
-            return calories3-calories2;
+            return calories3 - calories2;
         }
     };
 

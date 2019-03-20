@@ -1,7 +1,7 @@
 package com.netcracker.eaters.ingredients;
 
-import java.util.Date;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashSet;
 
 public class Ingredient {
@@ -46,7 +46,6 @@ public class Ingredient {
     }
 
 
-
     public void deleteTag(String tag) {
         tags.remove(tag);
     }
@@ -55,20 +54,33 @@ public class Ingredient {
         tags.clear();
     }
 
-    public void setName(String name) { this.getName = name; }
+    public void setName(String name) {
+        this.getName = name;
+    }
 
-    public void setGroup(Group group) { this.group = group; }
+    public void setGroup(Group group) {
+        this.group = group;
+    }
 
-    public void setShelfLifeDate(Date shelfLifeDate) { this.shelfLifeDate = shelfLifeDate; }
+    public void setShelfLifeDate(Date shelfLifeDate) {
+        this.shelfLifeDate = shelfLifeDate;
+    }
 
-    public void setValue(int value) { this.value = value; }
+    public void setValue(int value) {
+        this.value = value;
+    }
 
-    public void setDimention(Dimention dimention) { this.dimention = dimention; }
+    public void setDimention(Dimention dimention) {
+        this.dimention = dimention;
+    }
 
-    public void setDescription(String description) { this.description = description; }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-    public void setTags(String tag) { tags.add(tag); }
-
+    public void setTags(String tag) {
+        tags.add(tag);
+    }
 
 
     public double getCalories() {
@@ -76,29 +88,49 @@ public class Ingredient {
         return calories;
     }
 
-    public double getProteins() { return proteins; }
+    public double getProteins() {
+        return proteins;
+    }
 
-    public double getFats() { return fats; }
+    public double getFats() {
+        return fats;
+    }
 
-    public double getCarbohydrates() { return carbohydrates; }
+    public double getCarbohydrates() {
+        return carbohydrates;
+    }
 
-    public String getName() { return getName; }
+    public String getName() {
+        return getName;
+    }
 
-    public Group getGroup() { return group; }
+    public Group getGroup() {
+        return group;
+    }
 
     public Date getShelfLifeDate() {
         Date copyShelfLifeDate = shelfLifeDate;
         return copyShelfLifeDate;
     }
 
-    public int getValue() { return value; }
+    public int getValue() {
+        return value;
+    }
 
-    public Dimention getDimention() { return dimention; }
+    public Dimention getDimention() {
+        return dimention;
+    }
 
-    public String getDescription() { return description; }
+    public String getDescription() {
+        return description;
+    }
 
-    public Collection<String> getTags() { return tags; }
+    public Collection<String> getTags() {
+        return tags;
+    }
 
-    public int getHashCodeID() { return hashCode(); }
+    public int getHashCodeID() {
+        return hashCode();
+    }
 
 }
