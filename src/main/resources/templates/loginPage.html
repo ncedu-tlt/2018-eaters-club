@@ -24,7 +24,7 @@
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
                 <div class="text-center">
-                    <img src="/img/eclub_logo_large.png" alt="Eclub logo" style="width: 12em"><br />
+                    <img src="/img/eclub_logo_large.png" id="eclub-logo" alt="Eclub logo" style="width: 12em" onclick="window.location='/'"><br />
                     <span class="pacifico-font">Eaters Club</span><br />
                 </div>
                 <div th:if="${param.error}" class="alert alert-danger" role="alert">
@@ -35,7 +35,9 @@
                 </div>
 
 
+
                 <form th:action="@{/login}" class="p-2 rounded" method="post">
+
 
                     <!--
                     <div class="form-group row">
@@ -49,13 +51,13 @@
                     <div class="form-group row">
                         <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                            <input type="text" class="form-control" id="inputEmail" placeholder="Email" name="username">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
                         <div class="col-sm-9">
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
                         </div>
                     </div>
                     <div class="form-group row">

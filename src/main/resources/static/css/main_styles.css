@@ -62,6 +62,11 @@ body {
     background-color: #fff7e8;
 }
 
+.header-bar {
+    background-color: #f2b442;
+    box-shadow: 0px 5px 3px #f2b442, 0px 5px 5px #fff7e8;
+}
+
 #card-description-1 {
     height: 3em;
 }
@@ -74,4 +79,17 @@ body {
     font-weight: bold;
     color: #ffcd71;
     background-color: #1a1a1a
+}
+
+#brand-ico {
+    text-shadow: 0 0 10px #fff7e8, 0 0 10px #fff7e8, 0 0 10px #fff7e8;
+}
+
+#eclub-logo {
+    width: 12em;
+    border-radius: 50%;
+}
+
+#eclub-logo:hover {
+    box-shadow: 0 0 20px orange, 0 0 20px orange, 0 0 20px orange;
 }
