@@ -9,6 +9,12 @@ public class DBUsers {
     private String email = "email";
     private String userpassword = "userpassword";
 
+    private Connection connection;
+
+    public DBUsers(Connection connection) {
+        this.connection = connection;
+    }
+
     public void selectExampleH2() throws SQLException {
         H2DriverManager driverManager = new H2DriverManager();
         Connection connection = driverManager.openH2Connection();
@@ -33,9 +39,6 @@ public class DBUsers {
         preparedStatement.setString(2, "user1");
         preparedStatement.setString(3, "user1@test.com");
         preparedStatement.setString(4, "user1");
-
-
-
         preparedStatement.execute();
         System.out.println("--- INSERTED 1 ROW ---");
     }

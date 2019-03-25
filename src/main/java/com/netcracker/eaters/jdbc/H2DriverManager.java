@@ -12,12 +12,10 @@ public class H2DriverManager {
 
     public Connection openH2Connection() {
         try {
-            Driver driver = createH2Driver();
+            Driver driver = createOracleDriver();
             DriverManager.registerDriver(driver);
-
             Properties properties = loadProperties();
             Connection connection = getConnection(properties);
-
             return connection;
 
         } catch (ClassNotFoundException e) {
@@ -32,7 +30,7 @@ public class H2DriverManager {
         return null;
     }
 
-    private Driver createH2Driver() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+    private Driver createOracleDriver() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         return (Driver) Class.forName("org.h2.Driver").newInstance();
     }
 
@@ -47,8 +45,6 @@ public class H2DriverManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
         return properties;
     }
 
