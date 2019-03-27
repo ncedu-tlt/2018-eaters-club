@@ -1,6 +1,5 @@
 package com.netcracker.eaters.service;
 
-import com.netcracker.eaters.model.Role;
 import com.netcracker.eaters.model.User;
 import com.netcracker.eaters.repository.RoleRepository;
 import com.netcracker.eaters.repository.UserRepository;

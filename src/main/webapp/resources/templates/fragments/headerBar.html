@@ -9,8 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <form class="form-inline offset-md-2">
             <input class="form-control mr-sm-2" type="text" placeholder="Enter recipe here..." aria-label="Search">
-            <button class="btn btn-warning" type="submit" style="background-color: #ffcd71"><i class="fa fa-search"
-                                                                                               aria-hidden="true"></i>&#160;Search
+            <button class="btn btn-warning" type="submit" style="background-color: #ffcd71"><i class="fa fa-search" aria-hidden="true"></i>&#160;Search
             </button>
         </form>
 
@@ -26,9 +25,9 @@
                 </form>
             </li>
             <li sec:authorize="!isAuthenticated()" class="nav-item">
-                <button class="btn btn-warning ml-1" id="register-button" data-toggle="modal"
-                        data-target="#registerModal">Register
-                </button>
+                <form th:action="@{/registration}" method="get">
+                    <button class="btn btn-warning ml-1" id="register-button">Register</button>
+                </form>                
             </li>
             <li sec:authorize="isAuthenticated()" class="nav-item">
                 <form th:action="@{/logout}" method="post">

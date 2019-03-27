@@ -1,54 +1,30 @@
-<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <!--<form action="#" th:action="@{/index}" th:object="${greeting}" method="post">
+<!--<form action="#" th:action="@{/index}" th:object="${greeting}" method="post">
                     <p>Id: <input type="text" th:field="*{id}" /></p>
                     <p>Message: <input type="text" th:field="*{content}" /></p>
                     <p><input type="submit" value="Submit" /> <input type="reset" value="Clear form" /></p>
                 </form>-->
-                <form action="/register" method="post">
-                    <table>
-                        <tr>
-                            <td>
-                                <strong>First name:</strong>
-                            </td>
-                            <td>
-                                <input type="text" name="firstname" maxlength="25" size="20">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <strong>Last name:</strong>
-                            </td>
-                            <td>
-                                <input type="text" name="lastname" maxlength="25" size="20">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <strong>E-mail:</strong>
-                            </td>
-                            <td>
-                                <input type="text" name="email" maxlength="25" size="20">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <strong>Password:</strong>
-                            </td>
-                            <td>
-                                <input type="text" name="userpassword" maxlength="25" size="20">
-                            </td>
-                        </tr>
-                        <input type="submit" id="submit-button" value="Sub"/> <input type="reset" value="Res"/>
-                    </table>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+
+
+<form th:action="@{/registration}" modelAttribute="userForm" class="p-2 rounded" method="post">
+    <h2>Create your account</h2>
+
+    <div class="form-group row">
+        <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputEmail" placeholder="Email" name="email">
         </div>
     </div>
-</div>
+    <div class="form-group row">
+        <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
+        <div class="col-sm-9">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-12">
+            <button type="submit" class="btn btn-warning btn-block">
+                <span class="pacifico-font">Sign in</span>
+            </button>
+        </div>
+    </div>
+</form>

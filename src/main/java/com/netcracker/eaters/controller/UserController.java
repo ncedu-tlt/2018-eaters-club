@@ -57,7 +57,7 @@ public class UserController {
         return "loginPage";
     }
 
-    @GetMapping({"/"})
+    @GetMapping("/")
     public String welcome(Model model) {
         return "index";
     }
