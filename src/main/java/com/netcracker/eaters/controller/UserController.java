@@ -33,7 +33,7 @@ public class UserController {
 
     @PostMapping("/registration")
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult) {
-        userValidator.validate(userForm, bindingResult);
+//        userValidator.validate(userForm, bindingResult);
 
         if (bindingResult.hasErrors()) {
             return "regPage";
@@ -41,24 +41,13 @@ public class UserController {
 
         userService.save(userForm);
 
-        securityService.autoLogin(userForm.getEmail(), userForm.getPasswordConfirm());
+//        securityService.autoLogin(userForm.getEmail(), userForm.getPasswordConfirm());
 
         return "redirect:/index";
     }
 
     @GetMapping("/login")
-    public String login(Model model, String error, String logout) {
-        if (error != null)
-            model.addAttribute("error", "Your username and password is invalid.");
-
-        if (logout != null)
-            model.addAttribute("message", "You have been logged out successfully.");
-
+    public String login(Model model, String logout) {
         return "loginPage";
-    }
-
-    @GetMapping("/")
-    public String welcome(Model model) {
-        return "index";
     }
 }
