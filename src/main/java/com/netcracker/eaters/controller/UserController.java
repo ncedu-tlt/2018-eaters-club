@@ -41,13 +41,19 @@ public class UserController {
 
         userService.save(userForm);
 
-//        securityService.autoLogin(userForm.getEmail(), userForm.getPasswordConfirm());
+        securityService.autoLogin(userForm.getEmail(), userForm.getPasswordConfirm());
 
         return "redirect:/index";
     }
 
     @GetMapping("/login")
-    public String login(Model model, String logout) {
+    public String login(Model model, String error, String logout) {
+        if (error != null)
+            model.addAttribute("error", "Your username and password is invalid.");
+
+        if (logout != null)
+            model.addAttribute("message", "You have been logged out successfully.");
+
         return "loginPage";
     }
 }

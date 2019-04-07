@@ -44,17 +44,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-                .antMatchers("/registration", "/").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
+        http.authorizeRequests().antMatchers("/registration", "/index").permitAll();
+        http.authorizeRequests().and().formLogin()
                 .loginPage("/login")
                 .permitAll()
-                .and()
-                .logout()
-                .permitAll();
+                .defaultSuccessUrl("/")
+                .usernameParameter("email")
+                .passwordParameter("password")
+                .failureUrl("/login?error");
     }
 
     @Override
@@ -64,13 +61,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/css/**")
                 .antMatchers("/js/**");
     }
-
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.jdbcAuthentication()
-//                .dataSource(dataSource)
-//                .passwordEncoder(bCryptPasswordEncoder())
-//                .usersByUsernameQuery("select email, password from user where email=?")
-//                .authoritiesByUsernameQuery("select u.email, ur.roles from user u inner join role ur on u.id = ur.id where u.email=?");
-//    }
 }
