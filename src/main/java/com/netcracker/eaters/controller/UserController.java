@@ -31,6 +31,31 @@ public class UserController {
         return "regPage";
     }
 
+    @GetMapping("/desktop")
+    public String desktop(Model model) {
+        return "desktop";
+    }
+
+    @GetMapping("/weight")
+    public String weight(Model model) {
+        return "weight";
+    }
+
+    @GetMapping("/myfridge")
+    public String myfridge(Model model) {
+        return "myfridge";
+    }
+
+    @GetMapping("/myreceipts")
+    public String myreceipts(Model model) {
+        return "myreceipts";
+    }
+
+    @GetMapping("/ilike")
+    public String ilike(Model model) {
+        return "ilike";
+    }
+
     @PostMapping("/registration")
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult) {
 //        userValidator.validate(userForm, bindingResult);

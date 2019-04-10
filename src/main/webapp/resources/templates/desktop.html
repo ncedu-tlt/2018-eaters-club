@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 align="center">Desktop</h1>
+<ul class="nav ml-auto">
+    <!--<p> Кнопка выход </p>-->
+        <li sec:authorize="isAuthenticated()" class="nav-item">
+            <form th:action="@{/logout}" method="post">
+                <input class="btn btn-warning ml-1" id="logout-button" type="submit" value="Sign Out"/>
+            </form>
+        </li>
+        <!--<p> График изменения веса (массы тела) </p>-->
+        <li sec:authorize="isAuthenticated()" class="nav-item">
+            <form th:action="@{/weight}" method="get">
+                <input class="btn btn-warning ml-1" id="weight" type="submit" value="Weight"/>
+            </form>
+        </li>
+        <!--<p> Мой холодильник </p>-->
+        <li sec:authorize="isAuthenticated()" class="nav-item">
+            <form th:action="@{/myfridge}" method="get">
+                <input class="btn btn-warning ml-1" id="myfridge" type="submit" value="myfridge"/>
+            </form>
+        </li>
+        <!--<p> Мои рецепты </p>-->
+        <li sec:authorize="isAuthenticated()" class="nav-item">
+            <form th:action="@{/myreceipts}" method="get">
+                <input class="btn btn-warning ml-1" id="myreceipts" type="submit" value="myreceipts"/>
+            </form>
+        </li>
+
+        <!--<p> Мне нравится </p>-->
+        <li sec:authorize="isAuthenticated()" class="nav-item">
+            <form th:action="@{/ilike}" method="get">
+                <input class="btn btn-warning ml-1" id="ilike" type="submit" value="ilike"/>
+            </form>
+        </li>
+</ul>
+</body>
+</html>
