@@ -24,7 +24,7 @@ public class UserDetailsImplService implements UserDetailsService {
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String userEmail) {
-        User user = userRepository.findByEmail(userEmail);
+/*        User user = userRepository.findByEmail(userEmail);
         if(user == null) throw new UsernameNotFoundException(userEmail);
 
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
@@ -34,5 +34,27 @@ public class UserDetailsImplService implements UserDetailsService {
         }
 
         return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), grantedAuthorities);
+*/
+
+        User user = userRepository.findByEmail(userEmail);
+
+        if(user == null) {
+            System.out.println("User not found! " + userEmail);
+            throw new UsernameNotFoundException(userEmail);
+        }
+
+        System.out.println("Found User: " + user);
+
+        Set<GrantedAuthority> grantList = new HashSet<>();
+        GrantedAuthority authority = new SimpleGrantedAuthority("ROLE_USER");
+        grantList.add(authority);
+
+//        for(Role role : user.getRoles()){
+//            grantedAuthorities.add(new SimpleGrantedAuthority(role.getRoleName()));
+//        }
+
+        UserDetails userDetails = new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), grantList);
+
+        return userDetails;
     }
 }
