@@ -25,27 +25,33 @@
                     <span class="pacifico-font">Eaters Club</span><br />
                 </div>
 
-                <form th:action="@{/registration}" th:object="${user}" modelAttribute="userForm" class="p-2 rounded" method="post">
+                <form th:action="@{/registration}" modelAttribute="userForm" class="p-2 rounded" method="post">
                     <h2>Create your account</h2>
 
                     <!--                    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="alert alert-danger" role="alert"></div>-->
 
                     <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+                        <label for="inputEmail" class="col-sm-3 col-form-label">Email<span class="red-star">*</span></label>
                         <div class="col-sm-9">
                             <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
+                        <label for="inputPassword" class="col-sm-3 col-form-label">Password<span class="red-star">*</span></label>
                         <div class="col-sm-9">
                             <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
+                        </div>                        
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-3 col-form-label">Confirm password<span class="red-star">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="passwordConfirm">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-12">
                             <button type="submit" class="btn btn-warning btn-block">
-                                <span class="pacifico-font">Sign in</span>
+                                <span class="pacifico-font">Register</span>
                             </button>
                         </div>
                     </div>

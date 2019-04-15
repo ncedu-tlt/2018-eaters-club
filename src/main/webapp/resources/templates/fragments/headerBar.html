@@ -16,7 +16,7 @@
         <ul class="nav ml-auto">
             <li class="nav-item d-flex align-items-center">
                 <div sec:authorize="isAuthenticated()">
-                    <a th:inline="text">[[${#httpServletRequest.remoteUser}]] </a>
+                    <a th:inline="text"><span class="pacifico-font">Hello, </span>[[${#httpServletRequest.remoteUser}]]<span class="pacifico-font">!</span></a>
                 </div>
             </li>
             <li sec:authorize="!isAuthenticated()" class="nav-item">
@@ -29,9 +29,9 @@
                     <button class="btn btn-warning ml-1" id="register-button">Register</button>
                 </form>                
             </li>
-            <li sec:authorize="isAuthenticated()" class="nav-item">
+            <li sec:authorize="isAuthenticated()" class="nav-item ml-2">
                 <form th:action="@{/logout}" method="post">
-                    <input class="btn btn-warning ml-1" id="login-button" type="submit" value="Sign Out"/>
+                    <input class="btn btn-warning" id="login-button" type="submit" value="Sign Out"/>
                 </form>
             </li>
         </ul>

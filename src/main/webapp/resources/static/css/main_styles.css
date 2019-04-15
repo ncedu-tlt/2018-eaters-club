@@ -49,6 +49,10 @@ body {
     bottom: 7.6em;
 }
 
+.red-star {
+    color: red;
+}
+
 .star-checked {
     color: orange;
     text-shadow: 0 0 5px black;
