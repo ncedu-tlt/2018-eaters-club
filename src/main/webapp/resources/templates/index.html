@@ -36,7 +36,7 @@
         <div class="col-2 p-0">
             <div class="rounded mr-3" style="height: 100%; background-color: #ffe5b4;">
 
-                <p class="text-center">Categories</p>
+                <p class="pacifico-font text-center">Categories</p>
                 <div class="ml-3">
                     <i class="fas fa-drumstick-bite fa-lg"></i>
                     <a href="#" style="color: black">Мясные блюда</a><br/>
@@ -62,19 +62,13 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
-                    <div class="carousel-inner" style="width: 50em">
+                    <div class="carousel-inner w-50">
                         <div class="carousel-item active">
                             <div class="card mb-3">
                                 <img class="card-img-top" src="/img/test1.jpg" alt="First slide">
 
                                 <!-- Rating block-->
-                                <div class="rating">
-                                    <span class="fa fa-star" id="star1" onclick="add(1)"></span>
-                                    <span class="fa fa-star" id="star2" onclick="add(2)"></span>
-                                    <span class="fa fa-star" id="star3" onclick="add(3)"></span>
-                                    <span class="fa fa-star" id="star4" onclick="add(4)"></span>
-                                    <span class="fa fa-star" id="star5" onclick="add(5)"></span>
-                                </div>
+                                
 
                                 <div class="card-body">
                                     <h5 class="card-title" href="">Картошка по-французски</h5>
@@ -82,6 +76,20 @@
                                         Картошка по-французски запекается в духовке с мясом и луком. Очень простой
                                         рецепт, но картошка по-французски - это всегда очень вкусно и аппетитно.
                                     </p>
+                                    <br />
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <span class="fa fa-star" id="star1" onclick="add(1)"></span>
+                                            <span class="fa fa-star" id="star2" onclick="add(2)"></span>
+                                            <span class="fa fa-star" id="star3" onclick="add(3)"></span>
+                                            <span class="fa fa-star" id="star4" onclick="add(4)"></span>
+                                            <span class="fa fa-star" id="star5" onclick="add(5)"></span>
+                                        </div>
+                                    
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#recipeModal">
+                                          See more...
+                                        </button>
+                                    </div>
 
                                     <p class="card-text">
                                         <small class="text-muted">#tags</small>
@@ -155,28 +163,18 @@
         </div>
 
         <div class="col-2 rounded d-flex justify-content-center" style="background-color: #ffe5b4;">
-            <p class="text-center">Tags cloud</p>
+            <p class="pacifico-font text-center">Tags cloud</p> 
         </div>
     </div>
-
+    
+<!-- recipre modal -->
+<div th:insert="fragments/recipeModal"></div>
+    
 </main>
 <!-- /.container -->
 
-<footer>
-    <div class="row px-3">
-        <!-- Tags cloud-->
-        <div class="col-12 rounded mb-3" style="height: 10em; background-color: #ffe5b4;">
-            <p class="text-center">We recommend</p>
-
-
-        </div>
-    </div>
-</footer>
-
-<!--    Modal window-->
-<!--
-<div th:insert="fragments/mainModal"></div>
--->
+<!-- Footer -->
+<div th:insert="fragments/recommends"></div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

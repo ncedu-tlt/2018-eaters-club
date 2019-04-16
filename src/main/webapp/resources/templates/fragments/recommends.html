@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+</head>
+<body>
+    <footer>
+    <div class="row px-3">
+        <!-- Tags cloud-->
+        <div class="col-12 rounded mb-3" style="height: 20em; background-color: #ffe5b4;">
+            <p class="pacifico-font text-center">We recommend</p>
+            
+            <div id="carousel2ExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carousel2ExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel2ExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carousel2ExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner h-100 w-30">
+                <div class="carousel-item active d-flex flex-row">
+                       <div th:insert="fragments/recCard"></div>                           
+                       <div th:insert="fragments/recCard"></div>                           
+                       <div th:insert="fragments/recCard"></div>                           
+                       <div th:insert="fragments/recCard"></div>                           
+                       <div th:insert="fragments/recCard"></div>                           
+                       <div th:insert="fragments/recCard"></div>                           
+                </div>
+                <div class="carousel-item">                       
+                </div>
+                <div class="carousel-item">                     
+                </div>
+              </div>
+<!--
+              <a class="carousel-control-prev" href="#carousel2ExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carousel2ExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+-->
+            </div>
+
+        </div>
+    </div>
+</footer>
+    
+</body>
+</html>
