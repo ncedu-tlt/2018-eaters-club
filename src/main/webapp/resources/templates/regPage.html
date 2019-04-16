@@ -25,7 +25,7 @@
                     <span class="pacifico-font">Eaters Club</span><br />
                 </div>
 
-                <form th:action="@{/registration}" modelAttribute="userForm" class="p-2 rounded" method="post">
+                <form th:action="@{/registration}" th:object="${userForm}" modelAttribute="userForm" class="p-2 rounded" method="post">
                     <h2>Create your account</h2>
 
                     <!--                    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="alert alert-danger" role="alert"></div>-->
@@ -33,19 +33,22 @@
                     <div class="form-group row">
                         <label for="inputEmail" class="col-sm-3 col-form-label">Email<span class="red-star">*</span></label>
                         <div class="col-sm-9">
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email">
+                            <input type="email" th:field="*{email}" class="form-control" id="inputEmail" placeholder="Email" name="email">
+                            <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="alert alert-danger mt-1" role="alert">..</div>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Password<span class="red-star">*</span></label>
                         <div class="col-sm-9">
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
+                            <input type="password" th:field="*{password}" class="form-control" id="inputPassword" placeholder="Password" name="password">
+                            <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="alert alert-danger mt-1" role="alert">..</div>
                         </div>                        
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Confirm password<span class="red-star">*</span></label>
                         <div class="col-sm-9">
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="passwordConfirm">
+                            <input type="password" th:field="*{passwordConfirm}" class="form-control" id="inputPassword" placeholder="Confirm password" name="passwordConfirm">
+                            <div th:if="${#fields.hasErrors('passwordConfirm')}" th:errors="*{passwordConfirm}" class="alert alert-danger mt-1" role="alert">..</div>
                         </div>
                     </div>
                     <div class="form-group row">
