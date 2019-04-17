@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <nav class="navbar navbar-expand-md fixed-top header-bar">
-    <a class="navbar-brand" style="position: absolute">
+    <a class="navbar-brand" onclick="window.location='/'">
         <i class="fas fa-utensils fa-lg" id="brand-ico" style="position: relative; bottom: 3px;"></i>
         <span class="pacifico-font">Eaters Club</span>
     </a>
@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <form class="form-inline offset-md-2">
             <input class="form-control mr-sm-2" type="text" placeholder="Enter recipe here..." aria-label="Search">
-            <button class="btn btn-warning" type="submit" style="background-color: #ffcd71"><i class="fa fa-search" aria-hidden="true"></i>&#160;Search
+            <button class="btn btn-warning" id="orangeButton" type="submit"><i class="fa fa-search" aria-hidden="true"></i>&#160;Search
             </button>
         </form>
 
@@ -21,17 +21,17 @@
             </li>
             <li sec:authorize="!isAuthenticated()" class="nav-item">
                 <form th:action="@{/login}" method="get">
-                    <button class="btn btn-warning ml-1" id="login-button" type="submit">Log In</button>
+                    <button class="btn btn-warning ml-1" id="orange-button" type="submit">Log In</button>
                 </form>
             </li>
             <li sec:authorize="!isAuthenticated()" class="nav-item">
                 <form th:action="@{/registration}" method="get">
-                    <button class="btn btn-warning ml-1" id="register-button">Register</button>
+                    <button class="btn btn-warning ml-1" id="black-button">Register</button>
                 </form>                
             </li>
             <li sec:authorize="isAuthenticated()" class="nav-item ml-2">
-                <form th:action="@{/personalArea}" method="get">
-                    <button class="btn btn-warning ml-1" id="pa-button">Personal area</button>
+                <form th:action="@{/personalAccount}" method="get">
+                    <button class="btn btn-warning ml-1" id="pa-button">My account</button>
                 </form>
             </li>
             <li sec:authorize="isAuthenticated()" class="nav-item ml-2">

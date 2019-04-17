@@ -38,6 +38,11 @@ body {
     vertical-align: middle;
 }
 
+.panel {
+    height: 100%;
+    background-color: #ffe5b4;
+}
+
 .pacifico-font {
     font-family: 'Pacifico', cursive;
     font-size: 1.3em;
@@ -66,6 +71,15 @@ body {
     background-color: #fff7e8;
 }
 
+.navabar-brand {
+    position: absolute;
+    color: black;    
+}
+
+.navbar-brand:hover {  
+    text-shadow: 0 0 20px white, 0 0 20px white, 0 0 20px white;
+}
+
 .header-bar {
     background-color: #f2b442;
     box-shadow: 0px 5px 3px #f2b442, 0px 5px 5px #fff7e8;
@@ -75,15 +89,11 @@ body {
     height: 3em;
 }
 
-#login-button {
+#orange-button {
     background-color: #ffcd71;
 }
 
-#pa-button {
-    background-color: #ffcd71;
-}
-
-#register-button {
+#black-button {
     font-weight: bold;
     color: #ffcd71;
     background-color: #1a1a1a

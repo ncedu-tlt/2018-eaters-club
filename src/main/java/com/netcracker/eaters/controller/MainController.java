@@ -16,8 +16,8 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/personalArea")
+    @GetMapping("/personalAccount")
     public String personalArea(Model model) {
-        return "personalArea";
+        return "personalAccount";
     }
 }
