@@ -30,6 +30,11 @@
                 </form>                
             </li>
             <li sec:authorize="isAuthenticated()" class="nav-item ml-2">
+                <form th:action="@{/personalArea}" method="get">
+                    <button class="btn btn-warning ml-1" id="pa-button">Personal area</button>
+                </form>
+            </li>
+            <li sec:authorize="isAuthenticated()" class="nav-item ml-2">
                 <form th:action="@{/logout}" method="post">
                     <input class="btn btn-warning" id="login-button" type="submit" value="Sign Out"/>
                 </form>

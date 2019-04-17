@@ -11,4 +11,9 @@ public class MainController {
     public String root(Model model) {
         return "index";
     }
+
+    @GetMapping("/personalArea")
+    public String personalArea(Model model) {
+        return "personalArea";
+    }
 }

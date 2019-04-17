@@ -39,13 +39,13 @@
                 <p class="pacifico-font text-center">Categories</p>
                 <div class="ml-3">
                     <i class="fas fa-drumstick-bite fa-lg"></i>
-                    <a href="#" style="color: black">Мясные блюда</a><br/>
+                    <a href="#" style="color: black">Meat dishes</a><br/>
                     <i class="fas fa-carrot fa-lg"></i>
-                    <a href="#" style="color: black">Вегетарианские блюда</a><br/>
+                    <a href="#" style="color: black">Vegetarian dishes</a><br/>
                     <i class="fas fa-birthday-cake fa-lg"></i>
-                    <a href="#" style="color: black">Дессерты</a><br/>
+                    <a href="#" style="color: black">Desserts</a><br/>
                     <i class="fas fa-cocktail fa-lg"></i>
-                    <a href="#" style="color: black">Напитки</a><br/>
+                    <a href="#" style="color: black">The drinks</a><br/>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
         <!--            Main content-->
         <div class="col-8 p-0">
             <div class="rounded mr-3" style="background-color: #ffffff">
-                <p class="text-center">Main content</p>
+                <p class="pacifico-font text-center">We recommend</p>
 
                 <div id="carouselExampleIndicators" class="carousel slide d-flex justify-content-center"
                      data-ride="carousel">
@@ -65,16 +65,12 @@
                     <div class="carousel-inner w-50">
                         <div class="carousel-item active">
                             <div class="card mb-3">
-                                <img class="card-img-top" src="/img/test1.jpg" alt="First slide">
-
-                                <!-- Rating block-->
-                                
+                                <img class="card-img-top" src="/img/test1.jpg" alt="First slide">                                
 
                                 <div class="card-body">
-                                    <h5 class="card-title" href="">Картошка по-французски</h5>
+                                    <h5 class="card-title" href="">French potato</h5>
                                     <p class="card-text" id="card-description-1">
-                                        Картошка по-французски запекается в духовке с мясом и луком. Очень простой
-                                        рецепт, но картошка по-французски - это всегда очень вкусно и аппетитно.
+                                        French fries are baked in the oven with meat and onions. A very simple recipe, but French potatoes are always very tasty and appetizing.
                                     </p>
                                     <br />
                                     <div class="d-flex justify-content-between">
@@ -86,7 +82,7 @@
                                             <span class="fa fa-star" id="star5" onclick="add(5)"></span>
                                         </div>
                                     
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#recipeModal">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#recipeModal" style="background-color: #ffcd71">
                                           See more...
                                         </button>
                                     </div>
@@ -168,13 +164,15 @@
     </div>
     
 <!-- recipre modal -->
-<div th:insert="fragments/recipeModal"></div>
+
     
 </main>
 <!-- /.container -->
 
 <!-- Footer -->
 <div th:insert="fragments/recommends"></div>
+    
+<div th:insert="fragments/recipeModal"></div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
