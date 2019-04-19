@@ -1,0 +1,129 @@
+<div class="modal fade" id="recipesCatalogModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title pacifico-font" id="exampleModalLongTitle">Recipes catalog</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body m-2">
+                <div class="row">
+
+                    <div class="dropdown mr-2">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Meat dishes
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Meat dishes</a>
+                            <a class="dropdown-item" href="#">Vegetarian dishes</a>
+                            <a class="dropdown-item" href="#">Desserts</a>
+                            <a class="dropdown-item" href="#">The drinks</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            By name
+                        </button>
+                        <div class="dropdown-menu mx-2" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">By name</a>
+                            <a class="dropdown-item" href="#">By rating</a>
+                        </div>
+                    </div>
+
+
+                </div><br />
+
+                <div class="row">
+
+                    <div class="media d-flex">
+                        <img src="img/test1.jpg" style="height: 64px;" class="mr-3" alt="...">
+                        <div class="media-body">
+
+                            <a class="justify-content-start" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                French potato
+                            </a>
+
+                            <div class="ml-auto">
+                                <span class="fa fa-star" id="star1" onclick="add(1)"></span>
+                                <span class="fa fa-star" id="star2" onclick="add(2)"></span>
+                                <span class="fa fa-star" id="star3" onclick="add(3)"></span>
+                                <span class="fa fa-star" id="star4" onclick="add(4)"></span>
+                                <span class="fa fa-star" id="star5" onclick="add(5)"></span>
+                            </div>
+
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                    French fries are baked in the oven with meat and onions. A very simple recipe, but
+                                    French
+                                    potatoes are always very tasty and appetizing.
+
+                                    <button type="button" class="btn btn-warning ml-1" id="orange-button" data-toggle="modal" data-target="#recipeModal">
+                                        See more...
+                                    </button>
+                                </div>
+                            </div><br />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="media d-flex">
+                        <img src="img/stub.png" style="height: 64px;" class="mr-3" alt="...">
+                        <div class="media-body">
+
+                            <a class="justify-content-start" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                                Recipe 2
+                            </a>
+
+                            <div class="ml-auto">
+                                <span class="fa fa-star" id="star1" onclick="add(1)"></span>
+                                <span class="fa fa-star" id="star2" onclick="add(2)"></span>
+                                <span class="fa fa-star" id="star3" onclick="add(3)"></span>
+                                <span class="fa fa-star" id="star4" onclick="add(4)"></span>
+                                <span class="fa fa-star" id="star5" onclick="add(5)"></span>
+                            </div>
+
+                            <div class="collapse" id="collapseExample2">
+                                <div class="card card-body">
+                                    Test description
+                                </div>
+                            </div><br />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="media d-flex">
+                        <img src="img/stub.png" style="height: 64px;" class="mr-3" alt="...">
+                        <div class="media-body">
+
+                            <a class="justify-content-start" data-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
+                                Recipe 3
+                            </a>
+
+                            <div class="ml-auto">
+                                <span class="fa fa-star" id="star1" onclick="add(1)"></span>
+                                <span class="fa fa-star" id="star2" onclick="add(2)"></span>
+                                <span class="fa fa-star" id="star3" onclick="add(3)"></span>
+                                <span class="fa fa-star" id="star4" onclick="add(4)"></span>
+                                <span class="fa fa-star" id="star5" onclick="add(5)"></span>
+                            </div>
+
+                            <div class="collapse" id="collapseExample3">
+                                <div class="card card-body">
+                                    Test description
+                                </div>
+                            </div><br />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" id="black-button" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>

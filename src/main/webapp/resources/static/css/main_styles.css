@@ -93,6 +93,11 @@ body {
     background-color: #ffcd71;
 }
 
+#dropdownMenuButton {
+    background-color: #ffcd71;
+    color: black;
+}
+
 #black-button {
     font-weight: bold;
     color: #ffcd71;
